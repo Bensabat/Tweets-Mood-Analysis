@@ -19,7 +19,7 @@ This program has been developed with Python programming language, and use Keras 
 
 - `./dataset/tweets/tweets_emotion_6/emotion_6-processed.csv` contained **416,809** tweets labeled with **0 (angry)**, **1 (sad)**, **2 (fear)**, **3 (surprise)**, **4 (joy)** and **5 (love)**.
 
-- `./dataset/tweets/tweets_emotion_4/tweets_emotions_train-processed.csv` contained **30,159** tweets labeled with **angry**, **sad**, **other** and **happy**.
+- `./dataset/tweets/tweets_emotion_4/tweets_emotions_train-processed.csv` contained **30,159** tweets labeled with **0 (angry)**, **1 (sad)**, **2 (other)** and **3 (happy)**.
 
 ## Requirements
 
