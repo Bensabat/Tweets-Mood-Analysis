@@ -15,29 +15,38 @@ This program has been developed with Python programming language, and use Keras 
 
 ## Datasets
 
-- `dataset/tweets/train_moods.txt` contained **30,159** tweets labeled with **angry**, **sad**, **other** and **happy**.
-- `dataset/tweets/train_0_to_4.csv` contained **1,600,000** tweets labeled with polarity from **0 (negative)** to **4 (positive)**.
-    
-    This dataset is from kaggle: https://www.kaggle.com/kazanova/sentiment140
-- `dataset/tweets/train_positive_negative.csv` contained **100,000** tweets labeled with **0 (negative)** and **1 (positive)** polarities.
+- `./dataset/tweets/tweets_polarity_2/tweets_pos_neg_train-processed.csv` contained **640,000** tweets labeled with polarities **0 (negative)** and **1 (positive)**.
 
-    This dataset is from kaggle: https://www.kaggle.com/imrandude/twitter-sentiment-analysis
+- `./dataset/tweets/tweets_emotion_6/emotion_6-processed.csv` contained **416,809** tweets labeled with **0 (angry)**, **1 (sad)**, **2 (fear)**, **3 (surprise)**, **4 (joy)** and **5 (love)**.
 
+- `./dataset/tweets/tweets_emotion_4/tweets_emotions_train-processed.csv` contained **30,159** tweets labeled with **angry**, **sad**, **other** and **happy**.
+
+## Requirements
+
+There are some general library requirements for the project:
+* `numpy`
+* `scikit-learn`
+* `scipy`
+* `nltk`
+* `keras` with `TensorFlow`
+
+**Note**: It is recommended to use Anaconda distribution of Python.
 
 ## Installation
 
 - Go to `dataset/embedding/README.md` and follow the instruction to download the embedding matrix.
 
-- Go to `dataset/tweets/README.md` and follow the instruction to download the embedding matrix.
-
 ## Execution
 
-TODO
+- Post preprocess is done by `./src/post_preprocess.ipynb` (already done)
+- Preprocess is done by `./src/preprocess.py` (already done)
+- First model (polarities negative/positive) is done by `./src/cnn.py`
+- Second and third model (emotions 6 and 4) is done by `./src/transfer_learning.ipynb`
 
-## Bibliography
+Each running of CNN Will validate using 10% data and save models for each epoch in `./models/`. (Please make sure this directory exists before running `cnn.py`). 
 
-TODO
-
+- Write predictions using the best model at the end of `./src/transfer_learning.ipynb`
+- Our best model is save at `./models/transfer_emo6_emo4/entire_corpus/20-0.921-0.608-0.937-0.592.hdf5`
 
 ## Authors
 
